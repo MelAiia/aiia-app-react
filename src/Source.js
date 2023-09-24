@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Source() {
   return (
-    <small className="Source">
+    <footer className="Source">
       This app was coded by{" "}
       <a
         href="https://www.shecodes.io/graduates/81123-aiia-melnychenko"
@@ -27,6 +27,6 @@ export default function Source() {
       >
         hosted on Netlify
       </a>
-    </small>
+    </footer>
   );
 }
