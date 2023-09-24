@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Box />
+        <Box defaultCity="Kyiv" />
 
         <Source />
       </div>
