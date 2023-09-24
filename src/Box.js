@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormatteDate from "./FormatteDate";
 import "./Box.css";
 
 export default function Box(props) {
@@ -8,6 +9,7 @@ export default function Box(props) {
     console.log(response.data);
     setWeatherData({
       ready: true,
+      date: new Date(response.data.time * 1000),
       temperature: response.data.temperature.current,
       city: response.data.city,
       iconUrl: response.data.condition.icon_url,
@@ -41,7 +43,9 @@ export default function Box(props) {
           </div>
         </form>
         <ul>
-          <li>Wednesday 14 June, 14:46</li>
+          <li>
+            <FormatteDate date={weatherData.date} />
+          </li>
           <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <h1>{weatherData.city}</h1>
