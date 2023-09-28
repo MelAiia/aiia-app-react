@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import Forecast from "./Forecast";
 import Weather from "./Weather";
 import "./Box.css";
 
@@ -11,6 +11,7 @@ export default function Box(props) {
     console.log(response.data);
     setWeatherData({
       ready: true,
+      coordinates: response.data.coordinates,
       date: new Date(response.data.time * 1000),
       temperature: response.data.temperature.current,
       city: response.data.city,
@@ -62,6 +63,7 @@ export default function Box(props) {
           </div>
         </form>
         <Weather data={weatherData} />
+        <Forecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
