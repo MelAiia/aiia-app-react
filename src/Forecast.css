@@ -2,10 +2,6 @@
   text-align: center;
 }
 
-.ForecastIcon img {
-  size: 30px;
-}
-
 .ForecastMin {
   opacity: 0.6;
 }
